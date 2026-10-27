@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Startseite</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                padding: 40px 20px;
+
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(135deg, #f8f9fb, #e9edf2);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .page {
+                width: 100%;
+                max-width: 1100px;
+                margin: auto;
+            }
+
+            h1 {
+                margin: 0 0 35px;
+                text-align: center;
+                font-size: clamp(24px, 4vw, 32px);
+                font-weight: 600;
+                color: #1c1c1c;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 20px;
+                align-items: stretch;
+                justify-content: center;
+            }
+
+            .card {
+                min-width: 0;
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+
+                text-decoration: none;
+                color: #222;
+
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+                transition:
+                    transform 0.25s ease,
+                    box-shadow 0.25s ease;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+            }
+
+            .card:focus-visible {
+                outline: 3px solid #555;
+                outline-offset: 4px;
+            }
+
+            .logo-container {
+                height: 240px;
+                padding: 24px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: #fff;
+            }
+
+            .logo {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 200px;
+                max-height: 200px;
+                object-fit: contain;
+            }
+
+            .card-content {
+                padding: 22px;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-grow: 1;
+            }
+
+            .card-title {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 600;
+                overflow-wrap: anywhere;
+            }
+
+            .card-button {
+                display: inline-block;
+                margin-top: 18px;
+                padding: 12px 26px;
+
+                border-radius: 30px;
+                background: #111;
+                color: white;
+
+                font-size: 15px;
+                font-weight: 500;
+
+                transition: background 0.2s ease;
+            }
+
+            .card:hover .card-button {
+                background: #333;
+            }
+
+            @media (max-width: 1000px) {
+                .cards {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 800px) {
+                body {
+                    align-items: flex-start;
+                    padding: 30px 18px;
+                }
+            }
+
+            @media (max-width: 520px) {
+                body {
+                    padding: 24px 16px;
+                }
+
+                h1 {
+                    margin-bottom: 25px;
+                }
+
+                .cards {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .logo-container {
+                    height: 200px;
+                }
+
+                .logo {
+                    max-width: 160px;
+                    max-height: 160px;
+                }
+
+                .card-content {
+                    padding: 20px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    transition: none !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <main class="page">
+            <h1>Bitte wählen Sie einen Bereich</h1>
+
+            <section class="cards" aria-label="Verfügbare Bereiche">
+                <!-- MEDIZIN -->
+                <a class="card" href="Medizin/">
+                    <div class="logo-container">
+                        <img class="logo" src="medizin.jpg" alt="Medizin" />
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="card-title">Medizin</h2>
+                        <span class="card-button">Öffnen</span>
+                    </div>
+                </a>
+            </section>
+        </main>
+    </body>
+</html>
