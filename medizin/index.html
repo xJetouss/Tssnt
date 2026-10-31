@@ -29,38 +29,32 @@
                 margin: 0;
                 min-height: 100vh;
                 padding: 40px 20px;
-
                 font-family: Arial, Helvetica, sans-serif;
                 background: linear-gradient(135deg, #f8f9fb, #e9edf2);
-
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
             .back {
-                position: absolute;
+                position: fixed;
                 top: 20px;
                 left: 20px;
-
                 width: 46px;
                 height: 46px;
                 border-radius: 50%;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 background: white;
                 color: #111;
                 text-decoration: none;
-
                 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-
                 transition:
                     transform 0.2s ease,
                     box-shadow 0.2s ease,
                     background 0.2s ease;
+                z-index: 1000;
             }
 
             .back:hover {
@@ -68,7 +62,8 @@
                 box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
             }
 
-            .back:focus-visible {
+            .back:focus-visible,
+            .corner-button:focus-visible {
                 outline: 3px solid #555;
                 outline-offset: 3px;
             }
@@ -78,18 +73,60 @@
                 height: 22px;
             }
 
+            .corner-buttons {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 1000;
+            }
+
+            .corner-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 11px 16px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: white;
+                background: #171717;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+                transition:
+                    transform 0.2s ease,
+                    background 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .corner-button:hover {
+                transform: translateY(-3px);
+                background: #333;
+                box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+            }
+
+            .corner-button svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+            }
+
+            .coffee-button {
+                background: #ffdd00;
+                color: #171717;
+            }
+
+            .coffee-button:hover {
+                background: #f5d400;
+            }
+
             .page {
                 width: 100%;
                 max-width: 1100px;
                 margin: auto;
-            }
-
-            h1 {
-                margin: 0 0 35px;
-                text-align: center;
-                font-size: clamp(24px, 4vw, 32px);
-                font-weight: 600;
-                color: #1c1c1c;
             }
 
             .cards {
@@ -104,16 +141,12 @@
                 background: white;
                 border-radius: 20px;
                 overflow: hidden;
-
                 text-decoration: none;
                 color: #222;
-
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
                 transition:
                     transform 0.25s ease,
                     box-shadow 0.25s ease;
-
                 display: flex;
                 flex-direction: column;
             }
@@ -131,11 +164,9 @@
             .logo-container {
                 height: 240px;
                 padding: 24px;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 background: #fff;
             }
 
@@ -151,7 +182,6 @@
             .card-content {
                 padding: 22px;
                 text-align: center;
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -169,14 +199,11 @@
                 display: inline-block;
                 margin-top: 18px;
                 padding: 12px 26px;
-
                 border-radius: 30px;
                 background: #111;
                 color: white;
-
                 font-size: 15px;
                 font-weight: 500;
-
                 transition: background 0.2s ease;
             }
 
@@ -205,10 +232,25 @@
                 .back {
                     top: 16px;
                     left: 16px;
+                    width: 40px;
+                    height: 40px;
                 }
 
-                h1 {
-                    margin-bottom: 25px;
+                .corner-buttons {
+                    top: 12px;
+                    right: 12px;
+                    gap: 7px;
+                }
+
+                .corner-button {
+                    padding: 9px 11px;
+                    font-size: 12px;
+                    gap: 6px;
+                }
+
+                .corner-button svg {
+                    width: 16px;
+                    height: 16px;
                 }
 
                 .cards {
@@ -256,21 +298,48 @@
             </svg>
         </a>
 
+        <div class="corner-buttons">
+            <a
+                class="corner-button coffee-button"
+                href="https://buymeacoffee.com/jetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M3 7h15v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7zm15 2v5h1a2 2 0 0 0 0-4h-1zM2 4h17v2H2V4z"
+                    />
+                </svg>
+                Buy me a coffee
+            </a>
+
+            <a
+                class="corner-button"
+                href="https://github.com/xJetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.51-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.61 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.02.76 2.06v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"
+                    />
+                </svg>
+                GitHub
+            </a>
+        </div>
+
         <main class="page">
             <section class="cards" aria-label="Verfügbare Projekte">
-                <!-- LIPID -->
                 <a class="card" href="https://lipid.tssnt.dev">
                     <div class="logo-container">
                         <img class="logo" src="../Lipid.png" alt="Lipid Logo" />
                     </div>
-
                     <div class="card-content">
                         <h2 class="card-title">Lipid</h2>
                         <span class="card-button">Öffnen</span>
                     </div>
                 </a>
 
-                <!-- FASTTRACK CKD -->
                 <a class="card" href="https://FastTrack-CKD.tssnt.dev">
                     <div class="logo-container">
                         <img
@@ -279,14 +348,12 @@
                             alt="FastTrack CKD Logo"
                         />
                     </div>
-
                     <div class="card-content">
                         <h2 class="card-title">FastTrack CKD</h2>
                         <span class="card-button">Öffnen</span>
                     </div>
                 </a>
 
-                <!-- DIALYSE NU -->
                 <a class="card" href="https://nu.tssnt.dev/Dialyse">
                     <div class="logo-container">
                         <img
@@ -295,12 +362,12 @@
                             alt="Dialyse NU Logo"
                         />
                     </div>
-
                     <div class="card-content">
                         <h2 class="card-title">Dialyse NU</h2>
                         <span class="card-button">Öffnen</span>
                     </div>
                 </a>
+
                 <a class="card" href="https://nu.tssnt.dev/Apherese">
                     <div class="logo-container">
                         <img
@@ -309,7 +376,6 @@
                             alt="Apherese NU Logo"
                         />
                     </div>
-
                     <div class="card-content">
                         <h2 class="card-title">Apherese NU</h2>
                         <span class="card-button">Öffnen</span>

@@ -4,37 +4,40 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Startseite</title>
+
         <link
             rel="icon"
             type="image/png"
-            href="/favicon/favicon-96x96.png"
+            href="../favicon/favicon-96x96.png"
             sizes="96x96"
         />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/favicon/apple-touch-icon.png"
+            href="../favicon/apple-touch-icon.png"
         />
         <meta name="apple-mobile-web-app-title" content="Tssnt" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="manifest" href="../favicon/site.webmanifest" />
+
         <style>
             * {
                 box-sizing: border-box;
             }
 
+            html {
+                min-height: 100%;
+            }
+
             body {
                 margin: 0;
                 min-height: 100vh;
-                padding: 40px 20px;
-
+                padding: 40px 20px 20px;
                 font-family: Arial, Helvetica, sans-serif;
                 background: linear-gradient(135deg, #f8f9fb, #e9edf2);
-
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                flex-direction: column;
             }
 
             .page {
@@ -43,11 +46,12 @@
                 margin: auto;
             }
 
-            h1 {
-                margin: 0 0 35px;
+            .page-title {
+                margin: 0 0 45px;
                 text-align: center;
-                font-size: clamp(24px, 4vw, 32px);
-                font-weight: 600;
+                font-size: clamp(48px, 7vw, 64px);
+                font-weight: 700;
+                letter-spacing: -2px;
                 color: #1c1c1c;
             }
 
@@ -64,16 +68,12 @@
                 background: white;
                 border-radius: 20px;
                 overflow: hidden;
-
                 text-decoration: none;
                 color: #222;
-
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
                 transition:
                     transform 0.25s ease,
                     box-shadow 0.25s ease;
-
                 display: flex;
                 flex-direction: column;
             }
@@ -83,7 +83,9 @@
                 box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
             }
 
-            .card:focus-visible {
+            .card:focus-visible,
+            .corner-button:focus-visible,
+            .footer-button:focus-visible {
                 outline: 3px solid #555;
                 outline-offset: 4px;
             }
@@ -91,11 +93,9 @@
             .logo-container {
                 height: 240px;
                 padding: 24px;
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 background: #fff;
             }
 
@@ -111,7 +111,6 @@
             .card-content {
                 padding: 22px;
                 text-align: center;
-
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -129,19 +128,96 @@
                 display: inline-block;
                 margin-top: 18px;
                 padding: 12px 26px;
-
                 border-radius: 30px;
                 background: #111;
                 color: white;
-
                 font-size: 15px;
                 font-weight: 500;
-
                 transition: background 0.2s ease;
             }
 
             .card:hover .card-button {
                 background: #333;
+            }
+
+            /* Corner Buttons */
+
+            .corner-buttons {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 1000;
+            }
+
+            .corner-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 11px 16px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: #fff;
+                background: #171717;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+                transition:
+                    transform 0.2s ease,
+                    background 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .corner-button:hover {
+                transform: translateY(-3px);
+                background: #333;
+                box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+            }
+
+            .corner-button svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+            }
+
+            .coffee-button {
+                background: #ffdd00;
+                color: #171717;
+            }
+
+            .coffee-button:hover {
+                background: #f5d400;
+            }
+
+            /* Footer */
+
+            .footer {
+                width: 100%;
+                margin-top: auto;
+                padding: 25px 0 0;
+                text-align: center;
+            }
+
+            .footer-button {
+                display: inline-block;
+                padding: 11px 24px;
+                border-radius: 12px;
+                background: #e0e0e0;
+                color: #333;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition:
+                    background 0.2s ease,
+                    transform 0.2s ease;
+            }
+
+            .footer-button:hover {
+                background: #d0d0d0;
+                transform: translateY(-3px);
             }
 
             @media (max-width: 1000px) {
@@ -152,17 +228,16 @@
 
             @media (max-width: 800px) {
                 body {
-                    align-items: flex-start;
-                    padding: 30px 18px;
+                    padding: 75px 18px 20px;
                 }
             }
 
             @media (max-width: 520px) {
                 body {
-                    padding: 24px 16px;
+                    padding: 75px 16px 20px;
                 }
 
-                h1 {
+                .page-title {
                     margin-bottom: 25px;
                 }
 
@@ -183,6 +258,27 @@
                 .card-content {
                     padding: 20px;
                 }
+
+                .corner-buttons {
+                    top: 12px;
+                    right: 12px;
+                    gap: 7px;
+                }
+
+                .corner-button {
+                    padding: 9px 11px;
+                    font-size: 12px;
+                    gap: 6px;
+                }
+
+                .corner-button svg {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .footer {
+                    padding-top: 30px;
+                }
             }
 
             @media (prefers-reduced-motion: reduce) {
@@ -193,22 +289,46 @@
                     scroll-behavior: auto !important;
                 }
             }
-            .page-title {
-                margin: 0 0 45px;
-                text-align: center;
-                font-size: clamp(48px, 7vw, 64px);
-                font-weight: 700;
-                letter-spacing: -2px;
-                color: #1c1c1c;
-            }
         </style>
     </head>
 
     <body>
+        <div class="corner-buttons">
+            <a
+                class="corner-button coffee-button"
+                href="https://buymeacoffee.com/jetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buy me a coffee"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M3 7h15v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7zm15 2v5h1a2 2 0 0 0 0-4h-1zM2 4h17v2H2V4z"
+                    />
+                </svg>
+                Buy me a coffee
+            </a>
+
+            <a
+                class="corner-button"
+                href="https://github.com/xJetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.51-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.61 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.02.76 2.06v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"
+                    />
+                </svg>
+                GitHub
+            </a>
+        </div>
+
         <main class="page">
             <h1 class="page-title">Tssnt</h1>
+
             <section class="cards" aria-label="Verfügbare Bereiche">
-                <!-- MEDIZIN -->
                 <a class="card" href="medizin/">
                     <div class="logo-container">
                         <img class="logo" src="medizin.jpg" alt="Medizin" />
@@ -221,5 +341,11 @@
                 </a>
             </section>
         </main>
+
+        <footer class="footer">
+            <a class="footer-button" href="Impressum/">
+                Impressum & Datenschutz
+            </a>
+        </footer>
     </body>
 </html>
