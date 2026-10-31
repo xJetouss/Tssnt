@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Impressum & Datenschutz – Tssnt</title>
+
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="Tssnt" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                padding: 100px 20px 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                background: linear-gradient(135deg, #f8f9fb, #e9edf2);
+                color: #222;
+            }
+
+            .back {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                color: #111;
+                text-decoration: none;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+                z-index: 1000;
+            }
+
+            .back:hover {
+                transform: translateX(-3px);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+            }
+
+            .back svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .corner-buttons {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 1000;
+            }
+
+            .corner-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 11px 16px;
+                border-radius: 12px;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                color: white;
+                background: #171717;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+                transition:
+                    transform 0.2s ease,
+                    background 0.2s ease;
+            }
+
+            .corner-button:hover {
+                transform: translateY(-3px);
+                background: #333;
+            }
+
+            .corner-button svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+            }
+
+            .coffee-button {
+                background: #ffdd00;
+                color: #171717;
+            }
+
+            .coffee-button:hover {
+                background: #f5d400;
+            }
+
+            .back:focus-visible,
+            .corner-button:focus-visible,
+            .back-home:focus-visible {
+                outline: 3px solid #555;
+                outline-offset: 4px;
+            }
+
+            .page {
+                width: 100%;
+                max-width: 850px;
+                margin: 0 auto;
+            }
+
+            .content {
+                background: white;
+                padding: 45px 50px;
+                border-radius: 20px;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            }
+
+            h1 {
+                margin: 0 0 35px;
+                font-size: clamp(30px, 5vw, 42px);
+                letter-spacing: -1px;
+                color: #171717;
+            }
+
+            h2 {
+                margin: 35px 0 14px;
+                font-size: 21px;
+                color: #222;
+            }
+
+            h3 {
+                margin: 25px 0 10px;
+                font-size: 17px;
+                color: #333;
+            }
+
+            p {
+                margin: 0 0 16px;
+                font-size: 15px;
+                line-height: 1.8;
+                color: #444;
+            }
+
+            ul {
+                padding-left: 22px;
+                margin: 10px 0 20px;
+            }
+
+            li {
+                margin-bottom: 9px;
+                font-size: 15px;
+                line-height: 1.7;
+                color: #444;
+            }
+
+            a.email {
+                color: #222;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            .back-home {
+                display: inline-block;
+                margin-top: 35px;
+                padding: 12px 24px;
+                border-radius: 12px;
+                background: #e0e0e0;
+                color: #333;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition:
+                    background 0.2s ease,
+                    transform 0.2s ease;
+            }
+
+            .back-home:hover {
+                background: #d0d0d0;
+                transform: translateY(-3px);
+            }
+
+            @media (max-width: 800px) {
+                body {
+                    padding: 85px 18px 30px;
+                }
+
+                .content {
+                    padding: 35px 30px;
+                }
+            }
+
+            @media (max-width: 520px) {
+                body {
+                    padding: 75px 14px 24px;
+                }
+
+                .back {
+                    top: 12px;
+                    left: 12px;
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .corner-buttons {
+                    top: 12px;
+                    right: 12px;
+                    gap: 7px;
+                }
+
+                .corner-button {
+                    padding: 9px 10px;
+                    font-size: 11px;
+                    gap: 5px;
+                }
+
+                .corner-button svg {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                .content {
+                    padding: 28px 22px;
+                    border-radius: 16px;
+                }
+
+                h1 {
+                    margin-bottom: 25px;
+                }
+
+                h2 {
+                    font-size: 19px;
+                }
+
+                p,
+                li {
+                    font-size: 14px;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    transition: none !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <a class="back" href="../" aria-label="Zurück zur Startseite">
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M19 12H5M11 6l-6 6 6 6" />
+            </svg>
+        </a>
+
+        <div class="corner-buttons">
+            <a
+                class="corner-button coffee-button"
+                href="https://buymeacoffee.com/jetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M3 7h15v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7zm15 2v5h1a2 2 0 0 0 0-4h-1zM2 4h17v2H2V4z"
+                    />
+                </svg>
+                Buy me a coffee
+            </a>
+
+            <a
+                class="corner-button"
+                href="https://github.com/xJetouss"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.51-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.61 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.02.76 2.06v3.1c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8z"
+                    />
+                </svg>
+                GitHub
+            </a>
+        </div>
+
+        <main class="page">
+            <article class="content">
+                <h1>Impressum & Datenschutz</h1>
+
+                <h2>Impressum nach § 5 DDG</h2>
+
+                <p>
+                    <strong>Toussaint</strong><br />
+                    Eichenstraße 89<br />
+                    20255 Hamburg
+                </p>
+
+                <p>
+                    E-Mail:
+                    <a class="email" href="mailto:jetouss@tssnt.dev">
+                        jetouss@tssnt.dev
+                    </a>
+                </p>
+
+                <h2>Name und Anschrift des Verantwortlichen</h2>
+
+                <p>
+                    Der Verantwortliche im Sinne der Datenschutz-Grundverordnung
+                    und anderer nationaler Datenschutzgesetze der
+                    Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher
+                    Bestimmungen ist:
+                </p>
+
+                <p>
+                    <strong>Toussaint</strong><br />
+                    Eichenstraße 89<br />
+                    20255 Hamburg
+                </p>
+
+                <h2>
+                    Rechtsgrundlage für die Verarbeitung personenbezogener Daten
+                </h2>
+
+                <p>
+                    Soweit wir für Verarbeitungsvorgänge personenbezogener Daten
+                    eine Einwilligung der betroffenen Person einholen, dient
+                    Art. 6 Abs. 1 lit. a EU-Datenschutzgrundverordnung (DSGVO)
+                    als Rechtsgrundlage.
+                </p>
+
+                <p>
+                    Bei der Verarbeitung von personenbezogenen Daten, die zur
+                    Erfüllung eines Vertrages, dessen Vertragspartei die
+                    betroffene Person ist, erforderlich ist, dient Art. 6 Abs. 1
+                    lit. b DSGVO als Rechtsgrundlage. Dies gilt auch für
+                    Verarbeitungsvorgänge, die zur Durchführung vorvertraglicher
+                    Maßnahmen erforderlich sind.
+                </p>
+
+                <p>
+                    Soweit eine Verarbeitung personenbezogener Daten zur
+                    Erfüllung einer rechtlichen Verpflichtung erforderlich ist,
+                    der unser Unternehmen unterliegt, dient Art. 6 Abs. 1 lit. c
+                    DSGVO als Rechtsgrundlage.
+                </p>
+
+                <p>
+                    Für den Fall, dass lebenswichtige Interessen der betroffenen
+                    Person oder einer anderen natürlichen Person eine
+                    Verarbeitung personenbezogener Daten erforderlich machen,
+                    dient Art. 6 Abs. 1 lit. d DSGVO als Rechtsgrundlage.
+                </p>
+
+                <p>
+                    Ist die Verarbeitung zur Wahrung eines berechtigten
+                    Interesses unseres Unternehmens oder eines Dritten
+                    erforderlich und überwiegen die Interessen, Grundrechte und
+                    Grundfreiheiten des Betroffenen das erstgenannte Interesse
+                    nicht, so dient Art. 6 Abs. 1 lit. f DSGVO als
+                    Rechtsgrundlage für die Verarbeitung.
+                </p>
+
+                <p>
+                    Übermittlungen personenbezogener Daten an staatliche
+                    Einrichtungen und Behörden erfolgen nur, soweit wir hierzu
+                    gesetzlich verpflichtet sind.
+                </p>
+
+                <h2>Umfang der Verarbeitung personenbezogener Daten</h2>
+
+                <p>
+                    Der Schutz Ihrer Privatsphäre bei der Verarbeitung Ihrer
+                    personenbezogenen Daten ist für uns wichtig. Daher
+                    verarbeiten wir Ihre personenbezogenen Daten, die beim
+                    Besuch unserer Internetseiten erhoben werden, gemäß den
+                    datenschutzrechtlichen Bestimmungen der EU-DSGVO.
+                </p>
+
+                <p>
+                    Wir verarbeiten personenbezogene Daten unserer Nutzer
+                    grundsätzlich nur, soweit dies zur Bereitstellung einer
+                    funktionsfähigen Website sowie unserer Inhalte und
+                    Leistungen erforderlich ist.
+                </p>
+
+                <h2>Datenverarbeitung zur Websiten-Nutzung</h2>
+
+                <p>
+                    Wenn Sie unsere Internetseiten besuchen, speichern unsere
+                    Webserver automatisch die Daten, die Ihr Browser
+                    übermittelt, um eine Auslieferung der Website an den Rechner
+                    des Nutzers zu ermöglichen. Dies sind Ihre IP-Adresse, der
+                    Name Ihres Internet Service Providers, die Internetseite,
+                    von der aus Sie uns besuchen, das Datum und die Uhrzeit
+                    Ihres Besuchs, die jeweils übertragene Datenmenge, Ihr
+                    Browser, die Sprache und Version der Browsersoftware sowie
+                    Ihr Betriebssystem und dessen Oberfläche, Dauer und
+                    Häufigkeit der Besuche der Webseiten und dort die einzelnen
+                    Ansichten bei eindeutiger Zuordnung der IP-Adresse.
+                </p>
+
+                <p>
+                    Die Daten werden gelöscht, sobald sie für die
+                    Webseiten-Nutzung nicht mehr erforderlich sind.
+                    Rechtsgrundlage der Datenverarbeitung ist Art. 6 Abs. 1 lit.
+                    f EU-DSGVO.
+                </p>
+
+                <h2>Verwendung von Cookies</h2>
+
+                <p>
+                    Unsere Webseite verwendet Cookies. Bei Cookies handelt es
+                    sich um Textdateien, die im Internetbrowser bzw. vom
+                    Internetbrowser auf dem Computersystem des Nutzers
+                    gespeichert werden. Ruft ein Nutzer eine Website auf, so
+                    kann ein Cookie auf dem Betriebssystem des Nutzers
+                    gespeichert werden. Dieser Cookie enthält eine
+                    charakteristische Zeichenfolge, die eine eindeutige
+                    Identifizierung des Browsers beim erneuten Aufrufen der
+                    Website ermöglicht.
+                </p>
+
+                <p>
+                    Wir nutzen sog. „Transiente Cookies“. Diese werden
+                    automatisiert gelöscht, wenn Sie den Browser schließen. Dazu
+                    zählen insbesondere „Session-Cookies“. Sie speichern eine
+                    sog. Session-ID, mit welcher sich verschiedene Anfragen
+                    Ihres Browsers der gemeinsamen Sitzung zuordnen lassen.
+                    Dadurch kann Ihr Rechner wiedererkannt werden, wenn Sie auf
+                    die Website zurückkehren. Die Session-Cookies werden
+                    gelöscht, wenn Sie sich ausloggen oder Sie den Browser
+                    schließen.
+                </p>
+
+                <p>
+                    Sie können unsere Website auch ohne Cookies nutzen. Cookies
+                    werden auf dem Rechner des Nutzers gespeichert und von
+                    diesem an unserer Seite übermittelt. Daher haben Sie als
+                    Nutzer auch die volle Kontrolle über die Verwendung von
+                    Cookies. Durch eine Änderung der Einstellungen in Ihrem
+                    Internetbrowser können Sie die Übertragung von Cookies
+                    deaktivieren oder einschränken. Bereits gespeicherte Cookies
+                    können jederzeit gelöscht werden. Dies kann auch
+                    automatisiert erfolgen. Eventuell wird dies zu
+                    Funktionseinschränkungen führen.
+                </p>
+
+                <p>
+                    Rechtsgrundlage der Datenverarbeitung ist Art. 6 Abs. 1 lit.
+                    f EU-DSGVO.
+                </p>
+
+                <h2>Auskunfts- und Widerrufsrecht</h2>
+
+                <p>
+                    Sie haben das Recht, von uns gemäß EU-DSGVO jederzeit
+                    Auskunft darüber zu verlangen, ob personenbezogene Daten
+                    über Sie bei uns gespeichert sind. Des Weiteren stehen Ihnen
+                    in Bezug auf diese gespeicherten Daten folgende Rechte zu:
+                </p>
+
+                <ul>
+                    <li>
+                        Das Recht auf Auskunft über gespeicherte Daten (Art. 15
+                        EU-DSGVO).
+                    </li>
+                    <li>
+                        Das Recht auf Berichtigung unzutreffender Daten (Art. 16
+                        EU-DSGVO).
+                    </li>
+                    <li>
+                        Das Recht auf Löschung von Daten (Art. 17 EU-DSGVO).
+                    </li>
+                    <li>
+                        Das Recht auf Einschränkung der Verarbeitung von Daten
+                        (Art. 18 EU-DSGVO).
+                    </li>
+                    <li>
+                        Das Recht auf Widerspruch gegen unzumutbare
+                        Datenverarbeitung (Art. 21 EU-DSGVO).
+                    </li>
+                    <li>
+                        Das Recht auf Datenübertragbarkeit (Art. 20 EU-DSGVO).
+                    </li>
+                </ul>
+
+                <p>
+                    Alle Informationswünsche, Auskunftsanfragen oder
+                    Widersprüche zur Datenverarbeitung richten Sie bitte per
+                    E-Mail an die im Impressum genannte Adresse.
+                </p>
+
+                <p>
+                    Jede betroffene Person hat zudem das Recht auf Beschwerde
+                    bei einer Aufsichtsbehörde, insbesondere in dem
+                    Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes
+                    oder des Orts des mutmaßlichen Verstoßes, wenn die
+                    betroffene Person der Ansicht ist, dass die Verarbeitung der
+                    sie betreffenden personenbezogenen Daten gegen die EU-DSGVO
+                    verstößt (Art. 77 EU-DSGVO).
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
